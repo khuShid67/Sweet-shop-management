@@ -42,13 +42,43 @@ o npm start
 
 API EndPoint:
 
-EndPointMethodDescription/api/auth/register/POSTUser Registration/api/auth/login/POSTUser login/api/auth/user/GETGet user info/api/sweets/GET/POSTView/Add Sweets/api/sweets/search/GETSearch Sweets/api/sweets/:id/PUT/DELETEUpdate/Delete/api/sweets/:id/purchase/POSTPurchase sweet/api/sweets/:id/restock/POSTRestock sweet
+EndPoint
+Method
+Description
+
+
+
+/api/auth/register/
+POST
+User Registration
+/api/auth/login/
+POST
+User login
+/api/auth/user/
+GET
+Get user info
+/api/sweets/
+GET/POST
+View/Add Sweets
+/api/sweets/search/
+GET
+Search Sweets
+/api/sweets/:id/
+PUT/DELETE
+Update/Delete
+/api/sweets/:id/purchase/
+POST
+Purchase sweet
+/api/sweets/:id/restock/
+POST
+Restock sweet
+
 AI Usage
 
 I used ChatGPT and GitHub Copilot to help build this project.
 
 Tools Used:
-* ChatGPT: For designing backend structure, frontend forms, and fixing errors.
+* ChatGPT: For designing backend structure, frontend forms, and fixing errors. Helped with Django and React.
 * GitHub Copilot: For writing boilerplate React Code and Django views.
 
 Reflection
