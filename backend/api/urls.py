@@ -4,6 +4,7 @@ from .views import SweetCreateView
 from .views import SweetSearchView
 from .views import SweetDetailView  
 from .views import SweetPurchaseView, SweetRestockView
+from .views import user_detail
 
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
@@ -11,6 +12,7 @@ from rest_framework_simplejwt.views import (
 )
 
 urlpatterns = [
+    path('auth/user/', user_detail, name='user-detail'),
     path('auth/register/', RegisterView.as_view(), name='register'),
     path('auth/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('auth/refresh/', TokenRefreshView.as_view(), name='token_refresh'),

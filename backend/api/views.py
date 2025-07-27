@@ -10,6 +10,17 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
 from django.shortcuts import get_object_or_404
+from rest_framework.decorators import api_view, permission_classes
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def user_detail(request):
+    user = request.user
+    return Response({
+        "username": user.username,
+        "email": user.email,
+        "is_staff": user.is_staff
+    })
 
 
 class RegisterView(generics.CreateAPIView):

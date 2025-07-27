@@ -1,30 +1,28 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import './AuthPage.css';
 
 function LoginPage() {
   const [form, setForm] = useState({ username: '', password: '' });
   const navigate = useNavigate();
 
-  const handleChange = e => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
+  const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = async e => {
     e.preventDefault();
     try {
       const res = await axios.post('http://localhost:8000/api/auth/login/', form);
-      const token = res.data.access;
-      localStorage.setItem('token', token);
+      localStorage.setItem('token', res.data.access);
       alert('Login successful!');
       navigate('/dashboard');
-    } catch (err) {
+    } catch {
       alert('Invalid credentials');
     }
   };
 
   return (
-    <div>
+    <div className="auth-container">
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <input name="username" placeholder="Username" onChange={handleChange} required />
